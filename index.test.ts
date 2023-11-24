@@ -1,4 +1,4 @@
-import { checkBingo, winningBingoCard } from './index';
+import { checkBingo, calculateBingoCard } from './index';
 
 const numbers: number[] = [7, 4, 9, 5, 11, 17, 23, 2, 0, 14, 21, 24, 10, 16, 13, 6, 15, 25, 12, 22, 18, 20, 8, 19, 3, 26, 1];
 const card: number[][] = [
@@ -39,7 +39,7 @@ describe('checkBingo returns correct result', () => {
   });
 
   it('should return the winning Bingo card', () => {
-    const result = winningBingoCard(numbers, cards[0], cards[1], cards[2]);
-    expect(result).toBe(card[2]);
+    const result = calculateBingoCard(numbers, cards[0], cards[1], cards[2]);
+    expect(result).toBe(cards[2]);
   });
 });
